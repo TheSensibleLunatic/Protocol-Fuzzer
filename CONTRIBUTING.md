@@ -1,4 +1,4 @@
-# Contributing to marvell-proto-fuzzer
+# Contributing to proto-fuzzer
 
 Thank you for your interest in contributing! This document covers everything you
 need to know to make a successful contribution.
@@ -31,8 +31,8 @@ tolerated.
 
 ```bash
 # 1. Fork the repository on GitHub, then clone your fork
-git clone https://github.com/YOUR_USERNAME/marvell-proto-fuzzer.git
-cd marvell-proto-fuzzer
+git clone https://github.com/YOUR_USERNAME/proto-fuzzer.git
+cd proto-fuzzer
 
 # 2. Create and activate a virtual environment
 python -m venv .venv

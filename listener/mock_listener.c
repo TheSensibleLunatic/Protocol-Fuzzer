@@ -1,5 +1,5 @@
 /*
- * mock_listener.c — Raw socket listener for marvell-proto-fuzzer.
+ * mock_listener.c — Raw socket listener for proto-fuzzer.
  *
  * Binds to a network interface in promiscuous mode, receives raw Ethernet
  * frames, dispatches to the modular parser, and logs every result.

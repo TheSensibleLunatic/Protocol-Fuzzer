@@ -1,5 +1,5 @@
 /*
- * packet_parser.c — Modular packet parsing for marvell-proto-fuzzer listener.
+ * packet_parser.c — Modular packet parsing for proto-fuzzer listener.
  *
  * SAFE_MODE compile flag:
  *   -DSAFE_MODE=1  (default, safe)   → all bounds checked, no UB

@@ -10,7 +10,7 @@
 
 ## ⚠️ Authorized Use Only
 
-**marvell-proto-fuzzer is an offensive security research tool.**
+**proto-fuzzer is an offensive security research tool.**
 
 It is designed exclusively for:
 
@@ -25,7 +25,7 @@ The authors disclaim all liability for misuse.
 
 ## Reporting a Vulnerability in This Tool
 
-If you discover a security vulnerability **in marvell-proto-fuzzer itself**
+If you discover a security vulnerability **in proto-fuzzer itself**
 (e.g., a path traversal in the reporter, command injection via the CLI, or
 a memory safety issue in the C listener's safe mode), please follow responsible
 disclosure:

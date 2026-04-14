@@ -3,13 +3,13 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.backends.legacy:build"
 
 [project]
-name = "marvell-proto-fuzzer"
+name = "proto-fuzzer"
 version = "1.0.0"
-description = "Layer 2/3 Protocol Fuzzer for ARP, ICMP, and MACsec — Marvell Technology QA demo"
+description = "Layer 2/3 Protocol Fuzzer for ARP, ICMP, and MACsec"
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.10"
-authors = [{ name = "marvell-proto-fuzzer contributors" }]
+authors = [{ name = "proto-fuzzer contributors" }]
 keywords = ["fuzzer", "network", "security", "ARP", "ICMP", "MACsec", "scapy"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -38,11 +38,11 @@ dev = [
 ]
 
 [project.scripts]
-marvell-proto-fuzzer = "fuzzer.main:main"
+proto-fuzzer = "fuzzer.main:main"
 
 [project.urls]
-Homepage = "https://github.com/your-org/marvell-proto-fuzzer"
-"Bug Tracker" = "https://github.com/your-org/marvell-proto-fuzzer/issues"
+Homepage = "https://github.com/your-org/proto-fuzzer"
+"Bug Tracker" = "https://github.com/your-org/proto-fuzzer/issues"
 
 [tool.black]
 line-length = 100

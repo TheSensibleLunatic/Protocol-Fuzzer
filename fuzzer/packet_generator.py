@@ -1,5 +1,5 @@
 """
-packet_generator.py — Core mutation engine for marvell-proto-fuzzer.
+packet_generator.py — Core mutation engine for proto-fuzzer.
 
 Three mutation modes:
   random   – fully random field values seeded by --seed

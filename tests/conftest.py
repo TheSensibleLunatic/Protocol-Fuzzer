@@ -1,5 +1,5 @@
 """
-conftest.py — Shared pytest fixtures for marvell-proto-fuzzer test suite.
+conftest.py — Shared pytest fixtures for proto-fuzzer test suite.
 """
 
 import os

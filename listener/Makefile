@@ -1,4 +1,4 @@
-# Makefile — marvell-proto-fuzzer mock listener
+# Makefile — proto-fuzzer mock listener
 #
 # Targets:
 #   make safe      → SAFE_MODE=1, AddressSanitizer enabled

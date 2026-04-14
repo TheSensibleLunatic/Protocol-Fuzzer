@@ -199,7 +199,7 @@ class Reporter:
 
         lines = [
             "=" * 72,
-            "  marvell-proto-fuzzer  —  Session Report",
+            "  proto-fuzzer  —  Session Report",
             "=" * 72,
             f"  Protocol       : {self.session.protocol.upper()}",
             f"  Mode           : {self.session.mode}",

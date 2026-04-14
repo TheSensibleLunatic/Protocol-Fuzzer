@@ -1,5 +1,5 @@
 """
-main.py — CLI entry point for marvell-proto-fuzzer.
+main.py — CLI entry point for proto-fuzzer.
 
 Usage examples:
   sudo python -m fuzzer.main --protocol arp  --iface eth0 --count 200 --seed 42
@@ -30,7 +30,7 @@ from fuzzer.icmp_fuzzer import ICMPFuzzer
 from fuzzer.macsec_fuzzer import MACsecFuzzer
 from fuzzer.reporter import Reporter, Classification
 
-logger = setup_logger("marvell-proto-fuzzer")
+logger = setup_logger("proto-fuzzer")
 console = Console()
 
 # ---------------------------------------------------------------------------
@@ -50,7 +50,7 @@ except ImportError:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="marvell-proto-fuzzer",
+        prog="proto-fuzzer",
         description=(
             "Layer 2/3 Protocol Fuzzer — injects malformed ARP, ICMP, and "
             "MACsec frames to stress-test network device stacks."
@@ -177,7 +177,7 @@ def classify_response(sent: bool, elapsed_ms: float) -> tuple[str, str, bool]:
 def print_banner(args: argparse.Namespace) -> None:
     console.print(
         Panel.fit(
-            f"[bold cyan]marvell-proto-fuzzer[/bold cyan]\n"
+            f"[bold cyan]proto-fuzzer[/bold cyan]\n"
             f"  Protocol : [yellow]{args.protocol.upper()}[/yellow]\n"
             f"  Mode     : [green]{args.mode}[/green]\n"
             f"  Interface: [blue]{args.iface}[/blue]\n"

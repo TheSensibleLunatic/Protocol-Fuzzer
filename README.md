@@ -1,14 +1,13 @@
-# marvell-proto-fuzzer
+# proto-fuzzer
 
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue?logo=python)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Build](https://img.shields.io/github/actions/workflow/status/your-org/marvell-proto-fuzzer/ci.yml?label=CI&logo=github-actions)
+![Build](https://img.shields.io/github/actions/workflow/status/your-org/proto-fuzzer/ci.yml?label=CI&logo=github-actions)
 ![Coverage](https://img.shields.io/badge/coverage-tracked-brightgreen)
 ![Platform](https://img.shields.io/badge/platform-Linux-lightgrey?logo=linux)
 
 > **Production-quality Layer 2/3 Protocol Fuzzer** — injects malformed ARP, ICMP,
-> and MACsec frames against a mock C listener to demonstrate QA maturity aligned
-> with high-speed transceiver and cryptographic engine development at Marvell Technology.
+> and MACsec frames against a mock C listener to demonstrate QA maturity.
 
 ---
 
@@ -16,7 +15,7 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                       marvell-proto-fuzzer                       │
+│                       proto-fuzzer                       │
 │                                                                  │
 │  ┌──────────────────────────────────────────────────────────┐   │
 │  │                    Fuzzer Engine (Python)                 │   │
@@ -107,8 +106,8 @@
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-org/marvell-proto-fuzzer.git
-cd marvell-proto-fuzzer
+git clone https://github.com/your-org/proto-fuzzer.git
+cd proto-fuzzer
 
 # 2. Create and activate a virtual environment
 python -m venv .venv
@@ -322,7 +321,7 @@ A human-readable summary is written to the same directory as the JSON report:
 
 ```
 ========================================================================
-  marvell-proto-fuzzer  —  Session Report
+  proto-fuzzer  —  Session Report
 ========================================================================
   Protocol       : ICMP
   Mode           : boundary
@@ -367,7 +366,7 @@ open htmlcov/index.html
 ## Project Structure
 
 ```
-marvell-proto-fuzzer/
+proto-fuzzer/
 ├── fuzzer/
 │   ├── __init__.py
 │   ├── main.py              # CLI entry point (argparse + rich)
@@ -435,4 +434,4 @@ written authorisation to test. The authors accept no liability for misuse.**
 
 ## License
 
-[MIT](LICENSE) © 2026 marvell-proto-fuzzer contributors
+[MIT](LICENSE) © 2026 proto-fuzzer contributors

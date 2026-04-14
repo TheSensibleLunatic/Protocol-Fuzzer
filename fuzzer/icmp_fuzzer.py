@@ -1,5 +1,5 @@
 """
-icmp_fuzzer.py — ICMP protocol fuzzer for marvell-proto-fuzzer.
+icmp_fuzzer.py — ICMP protocol fuzzer for proto-fuzzer.
 
 Mutates the following ICMP fields:
 - type  (out-of-range values: 0-255, reserved/unassigned types)

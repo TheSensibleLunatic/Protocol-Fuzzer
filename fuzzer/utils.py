@@ -1,5 +1,5 @@
 """
-utils.py — Shared helper utilities for marvell-proto-fuzzer.
+utils.py — Shared helper utilities for proto-fuzzer.
 
 Provides: hex dump printer, random MAC/IP generators, checksum corruptor,
 and structured logging setup with colorlog.
@@ -18,7 +18,7 @@ import colorlog
 # Logging setup
 # ---------------------------------------------------------------------------
 
-def setup_logger(name: str = "marvell-proto-fuzzer", level: int = logging.DEBUG) -> logging.Logger:
+def setup_logger(name: str = "proto-fuzzer", level: int = logging.DEBUG) -> logging.Logger:
     """Return a colorised logger for the given name."""
     handler = colorlog.StreamHandler()
     handler.setFormatter(

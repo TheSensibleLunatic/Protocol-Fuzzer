@@ -1,5 +1,5 @@
 """
-arp_fuzzer.py — ARP protocol fuzzer for marvell-proto-fuzzer.
+arp_fuzzer.py — ARP protocol fuzzer for proto-fuzzer.
 
 Mutates the following ARP fields:
 - hwsrc / hwdst  (hardware addresses)
