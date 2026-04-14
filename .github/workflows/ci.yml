@@ -1,0 +1,109 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # ---------------------------------------------------------------------------
+  # Lint — flake8 + black formatting check
+  # ---------------------------------------------------------------------------
+  lint:
+    name: Lint (flake8 + black)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install lint dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install black flake8
+
+      - name: Run black (check only)
+        run: black --check --diff .
+
+      - name: Run flake8
+        run: flake8 fuzzer/ tests/ --max-line-length=100
+
+  # ---------------------------------------------------------------------------
+  # Test — pytest with coverage
+  # ---------------------------------------------------------------------------
+  test:
+    name: Test (pytest + coverage)
+    runs-on: ubuntu-latest
+    needs: lint
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run tests with coverage
+        run: |
+          pytest tests/ \
+            --cov=fuzzer \
+            --cov-report=xml:coverage.xml \
+            --cov-report=term-missing \
+            -v
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage.xml
+
+  # ---------------------------------------------------------------------------
+  # Build listener — compile C listener with both safe and unsafe targets
+  # ---------------------------------------------------------------------------
+  build-listener:
+    name: Build C Listener
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install GCC and libpcap
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc libpcap-dev
+
+      - name: Compile safe listener (SAFE_MODE=1, AddressSanitizer)
+        working-directory: listener
+        run: make safe
+
+      - name: Compile unsafe listener (SAFE_MODE=0)
+        working-directory: listener
+        run: make unsafe
+
+      - name: Verify binaries exist
+        working-directory: listener
+        run: |
+          test -f listener_safe   && echo "listener_safe OK"   || exit 1
+          test -f listener_unsafe && echo "listener_unsafe OK" || exit 1
+
+      - name: Upload listener binaries
+        uses: actions/upload-artifact@v4
+        with:
+          name: listener-binaries
+          path: |
+            listener/listener_safe
+            listener/listener_unsafe

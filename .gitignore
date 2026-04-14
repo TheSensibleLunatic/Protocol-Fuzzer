@@ -1,0 +1,59 @@
+# Python artefacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+ENV/
+.env
+*.egg-info/
+dist/
+build/
+.eggs/
+pip-wheel-metadata/
+*.egg
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# C build artefacts
+listener/listener_safe
+listener/listener_unsafe
+listener/*.o
+listener/*.out
+listener/*.a
+listener/listener_crashes.log
+listener/listener.log
+
+# Fuzzer output files
+reports/
+*.json
+summary.txt
+*.log
+*.pcap
+*.pcapng
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Distribution
+*.tar.gz
+*.whl
+MANIFEST
+
+# Type checking
+.mypy_cache/
+.dmypy.json
+dmypy.json
